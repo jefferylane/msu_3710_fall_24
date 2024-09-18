@@ -15,8 +15,12 @@
   </p>
 
   <p>
-    <strong>Minor:</strong>
-    <%= student.minor %>
+    <strong>Photo:</strong>
+    <% if student.image.attached? %>
+      <%= image_tag student.image %>
+    <% else %>
+      <p>No picture uploaded</p>
+<% end %>
   </p>
 
   <p>
