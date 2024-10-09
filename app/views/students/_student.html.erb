@@ -1,7 +1,21 @@
 <div id="<%= dom_id student %>">
   <p>
-    <strong>Name:</strong>
-    <%= student.name %>
+    <strong>First name:</strong>
+    <%= student.first_name %>
+  </p>
+
+  <p>
+    <strong>Last name:</strong>
+    <%= student.last_name %>
+  </p>
+
+  <p>
+    <strong>Profile Photo:</strong>
+    <% if student&.profile_photo&.attached? %>
+      <%= image_tag student.profile_photo, size: "150x150" %>
+    <% else %>
+      <%= image_tag "default_profile_photo.png", size: "150x150" %>
+    <% end %>
   </p>
 
   <p>
@@ -15,12 +29,8 @@
   </p>
 
   <p>
-    <strong>Photo:</strong>
-    <% if student.image.attached? %>
-      <%= image_tag student.image %>
-    <% else %>
-      <p>No picture uploaded</p>
-<% end %>
+    <strong>Minor:</strong>
+    <%= student.minor %>
   </p>
 
   <p>

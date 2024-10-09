@@ -1,0 +1,17 @@
+Its dangerous to go alone, take this document containing a list of common mac terminal commands that can be used for this portfolio project.
+
+Ruby on Rails Databases
+
+    rails db:create                             Create a database.
+    rails db:drop                               Drop a database.
+    rails db:reset                              Reset the database.
+
+    rails generate migration NameOfMigration    Generate a new migration.
+    rails db:migrate                            Migrate the database.
+    rails db:migrate VERSION=20240101000000     Roll back to a specific migration.
+    rails db:rollback                           Roll back to the last migration.
+    rails db:migrate:status                     List all migrations.
+
+Embedding Ruby (ERB)
+
+    <%...%>     Run the Ruby code in b

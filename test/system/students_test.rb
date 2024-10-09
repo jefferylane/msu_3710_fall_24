@@ -14,10 +14,11 @@ class StudentsTest < ApplicationSystemTestCase
     visit students_url
     click_on "New student"
 
+    fill_in "First name", with: @student.first_name
     fill_in "Graduation date", with: @student.graduation_date
+    fill_in "Last name", with: @student.last_name
     fill_in "Major", with: @student.major
     fill_in "Minor", with: @student.minor
-    fill_in "Name", with: @student.name
     fill_in "School email", with: @student.school_email
     click_on "Create Student"
 
@@ -29,10 +30,11 @@ class StudentsTest < ApplicationSystemTestCase
     visit student_url(@student)
     click_on "Edit this student", match: :first
 
+    fill_in "First name", with: @student.first_name
     fill_in "Graduation date", with: @student.graduation_date
+    fill_in "Last name", with: @student.last_name
     fill_in "Major", with: @student.major
     fill_in "Minor", with: @student.minor
-    fill_in "Name", with: @student.name
     fill_in "School email", with: @student.school_email
     click_on "Update Student"
 
