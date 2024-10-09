@@ -15,3 +15,10 @@ Ruby on Rails Databases
 Embedding Ruby (ERB)
 
     <%...%>     Run the Ruby code in b
+
+Github
+
+    git add .                           Add your changes to the staging area.
+    git commit -m "note"                Commit your changes.
+    git push origin branch-name         Push your channges to the desired branch or main.
+    git checkout -b new-branch-name     Create a new branch.
