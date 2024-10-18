@@ -5,12 +5,23 @@
 <%= render 'search_form', search_params: @search_params %>
 
 <div id="students">
-  <% @students.each do |student| %>
-    <%= render student %>
-    <p>
-      <%= link_to "Show this student", student %>
-    </p>
+  <% if @students.empty? %>
+    <% if @search_params.empty? %>
+      <p class="text-center">Please search for students to display results.</p>
+    <% else %>
+      <p class="text-center">No students found matching your criteria.</p>
+    <% end %>
+  <% else %>
+    <h1>Students</h1>
+    <% @students.each do |student| %>
+      <%= render student %>
+      <p>
+        <%= link_to "Show this student", student %>
+      </p>
+    <% end %>
   <% end %>
+
+  <%= link_to "Show All", students_path(search: { major: "" }), class: "btn btn-primary" %>
 </div>
 
 <%= link_to "New student", new_student_path %>
