@@ -10,8 +10,22 @@ class StudentsController < ApplicationController
     else
       @students = Student.all
   
+      # Filter by Major
       if @search_params[:major].present? && @search_params[:major] != "Any Major"
         @students = @students.where(major: @search_params[:major])
+      end
+  
+      # Filter by Graduation Date
+      if @search_params[:date_filter].present? && @search_params[:graduation_date].present?
+        graduation_date = Date.parse(@search_params[:graduation_date]) rescue nil
+  
+        if graduation_date
+          if @search_params[:date_filter] == 'before'
+            @students = @students.where('graduation_date < ?', graduation_date)
+          elsif @search_params[:date_filter] == 'after'
+            @students = @students.where('graduation_date > ?', graduation_date)
+          end
+        end
       end
     end
   end
