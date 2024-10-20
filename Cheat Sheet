@@ -18,7 +18,10 @@ Embedding Ruby (ERB)
 
 Github
 
+    git branch                          Check your current branch.
+    git checkout -b new-branch-name     Create a new branch.
+
     git add .                           Add your changes to the staging area.
     git commit -m "note"                Commit your changes.
     git push origin branch-name         Push your channges to the desired branch or main.
-    git checkout -b new-branch-name     Create a new branch.
+    git pull origin branch-name         Pull changes from the desired branch or main.
